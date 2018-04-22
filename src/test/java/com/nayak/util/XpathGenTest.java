@@ -9,7 +9,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItem;
@@ -85,6 +89,19 @@ public class XpathGenTest {
         List<XPathModel> xmlList=new XpathGen().xmlToXpath(soapUIXMLResponseFile);
         xmlList.stream().forEach(System.out::println);
         assertThat(xmlList.size(),equalTo(4));
+    }
+
+    @Test
+    public void test(){
+        List<String> x1= Arrays.asList("a","b","c");
+        List<String> x4= Arrays.asList("a","b","c");
+        List<String> x2= Arrays.asList("c","d","c");
+        List<String> x3= Arrays.asList("a","e","d");
+
+        List<List<String>> x=Arrays.asList(x1,x2,x3,x4);
+
+        Map<String,Long> xxxx= x.stream().map(y -> y.toString()).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(xxxx);
     }
 
 }
