@@ -6,6 +6,7 @@ import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -18,10 +19,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPath;
@@ -34,6 +32,59 @@ import java.util.*;
 public class CommonUtils {
 
     private CommonUtils() {
+    }
+
+    /**
+     * This method indents, format, convert self closing tag...
+     *
+     * @param xmlString
+     * @return
+     */
+    public static String formatXML(String xmlString){
+        StringWriter stringWriter=new StringWriter();
+        try{
+            DocumentBuilderFactory documentBuilderFactory=DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+            Document document=documentBuilder.parse(new InputSource(new StringReader(xmlString)));
+            //Normalize the XML Structure
+            document.getDocumentElement().normalize();
+            // Trimming Node Text values
+            trimWhitespace(document.getDocumentElement());
+
+            TransformerFactory transformerFactory=TransformerFactory.newInstance();
+            Transformer transformer=transformerFactory.newTransformer();
+
+            transformer.setOutputProperty(OutputKeys.METHOD, "html");
+
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+            transformer.transform(new DOMSource(document), new StreamResult(stringWriter));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (TransformerConfigurationException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+
+        return stringWriter.toString();
+    }
+
+    private static void trimWhitespace(Node node)
+    {
+        NodeList children = node.getChildNodes();
+        for(int i = 0; i < children.getLength(); ++i) {
+            Node child = children.item(i);
+            if(child.getNodeType() == Node.TEXT_NODE) {
+                child.setTextContent(child.getTextContent().trim());
+            }
+            trimWhitespace(child);
+        }
     }
 
     public static List<Map<String, String>> readXLSXToListMap(File file) {
