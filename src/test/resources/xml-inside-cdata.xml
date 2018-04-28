@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+    <Document>
+        <name>area Area Date: 2014-07-31</name>
+        <Placemark><name>P07L327</name><Point><coordinates>-96.26879,85.19125</coordinates></Point><description><![CDATA[<ol><li> Data Loaded:  NO</li><li>Quality: 5</li><li>Status: UP</li><li>Index: 72</li></eol>]]></description><Style> id = "colorIcon"</Style></Placemark>
+        <coordinates>-96.26879,85.19125,0 -96.26879,85.19125,0 -96.26879,85.19125,0 -96.26879,85.19125,0 -96.26879,45.14698,0 </coordinates>
+    </Document>
+</kml>

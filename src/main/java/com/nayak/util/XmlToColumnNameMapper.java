@@ -59,7 +59,7 @@ public class XmlToColumnNameMapper {
                     String newString = String.join("_", a.getXpathArray());
                     String prevString = String.join("_", a.getPrevXpathArray());
 
-                    Long count = x.stream().filter(b -> String.join("|", b.getXpathArray()).equals(newString)).count();
+                    Long count = x.stream().filter(b -> String.join("_", b.getXpathArray()).equals(newString)).count();
 
                     if (count > 1) {
                         a.setSolved(true);

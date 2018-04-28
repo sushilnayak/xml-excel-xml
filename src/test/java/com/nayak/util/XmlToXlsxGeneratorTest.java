@@ -3,6 +3,7 @@ package com.nayak.util;
 import com.nayak.model.XPathModel;
 import com.nayak.model.XpathColumnNameModel;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -89,13 +90,5 @@ public class XmlToXlsxGeneratorTest {
         assertThat(wassup, equalTo(false));
     }
 
-    @Test
-    public void sample2(){
-        XmlToXlsxGenerator.xlsxFileGenerator("XML",xmlString,false,xmlString,"EXPECTED_",false);
-    }
-    @Test
-    public void sample1(){
-        List<String> x= Arrays.asList(xmlString,xmlString2,xmlString);
-        XmlToXlsxGenerator.xlsxFileGenerator("XXX",x,false,false);
-    }
+
 }

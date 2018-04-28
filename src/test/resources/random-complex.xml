@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?xml-stylesheet type="text/xsl" href="/rss/styles/shared_xsl_stylesheet_v2.xml"?>
+<rss version="2.0">
+    <channel>
+        <title>All XBRL Data Submitted to the SEC for 2014-10</title>
+        <link>http://www.sec.gov/spotlight/xbrl/filings-and-feeds.shtml</link>
+        <atom:link href="http://www.sec.gov/Archives/edgar/monthly/xbrlrss-2014-10.xml" rel="self" type="application/rss+xml" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        <description>This is a list all of the filings containing XBRL for 2014-10</description>
+        <language>en-us</language>
+        <pubDate>Mon, 27 Oct 2014 00:00:00 EDT</pubDate>
+        <lastBuildDate>Mon, 27 Oct 2014 00:00:00 EDT</lastBuildDate>
+        <item>
+            <title>Bling Marketing, Inc. (0001593549) (Filer)</title>
+            <link>http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/0001014897-14-000441-index.htm</link>
+            <guid>http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/0001014897-14-000441-xbrl.zip</guid>
+            <enclosure url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/0001014897-14-000441-xbrl.zip" length="30761" type="application/zip" />
+            <description>10-Q</description>
+            <pubDate>Mon, 27 Oct 2014 17:25:14 EDT</pubDate>
+            <edgar:xbrlFiling xmlns:edgar="http://www.sec.gov/Archives/edgar">
+                <edgar:companyName>Bling Marketing, Inc.</edgar:companyName>
+                <edgar:formType>10-Q</edgar:formType>
+                <edgar:filingDate>10/27/2014</edgar:filingDate>
+                <edgar:cikNumber>0001593549</edgar:cikNumber>
+                <edgar:accessionNumber>0001014897-14-000441</edgar:accessionNumber>
+                <edgar:fileNumber>333-192997</edgar:fileNumber>
+                <edgar:acceptanceDatetime>20141027172514</edgar:acceptanceDatetime>
+                <edgar:period>20140930</edgar:period>
+                <edgar:assistantDirector>2</edgar:assistantDirector>
+                <edgar:assignedSic>5094</edgar:assignedSic>
+                <edgar:fiscalYearEnd>1231</edgar:fiscalYearEnd>
+                <edgar:xbrlFiles>
+                    <edgar:xbrlFile edgar:sequence="1" edgar:file="bling10q3q14v2.htm" edgar:type="10-Q" edgar:size="174242" edgar:description="FORM 10-Q" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/bling10q3q14v2.htm" />
+                    <edgar:xbrlFile edgar:sequence="2" edgar:file="bling10q3q14ex31.htm" edgar:type="EX-31" edgar:size="5481" edgar:description="EXHIBIT 31" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/bling10q3q14ex31.htm" />
+                    <edgar:xbrlFile edgar:sequence="3" edgar:file="bling10q3q14ex32.htm" edgar:type="EX-32" edgar:size="1827" edgar:description="EXHIBIT 32" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/bling10q3q14ex32.htm" />
+                    <edgar:xbrlFile edgar:sequence="4" edgar:file="blmi-20140930.xml" edgar:type="EX-101.INS" edgar:size="149179" edgar:description="XBRL INSTANCE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/blmi-20140930.xml" />
+                    <edgar:xbrlFile edgar:sequence="5" edgar:file="blmi-20140930.xsd" edgar:type="EX-101.SCH" edgar:size="28373" edgar:description="XBRL TAXONOMY EXTENSION SCHEMA DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/blmi-20140930.xsd" />
+                    <edgar:xbrlFile edgar:sequence="6" edgar:file="blmi-20140930_cal.xml" edgar:type="EX-101.CAL" edgar:size="7021" edgar:description="XBRL TAXONOMY EXTENSION CALCULATION LINKBASE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/blmi-20140930_cal.xml" />
+                    <edgar:xbrlFile edgar:sequence="7" edgar:file="blmi-20140930_def.xml" edgar:type="EX-101.DEF" edgar:size="17205" edgar:description="XBRL TAXONOMY EXTENSION DEFINITION LINKBASE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/blmi-20140930_def.xml" />
+                    <edgar:xbrlFile edgar:sequence="8" edgar:file="blmi-20140930_lab.xml" edgar:type="EX-101.LAB" edgar:size="74477" edgar:description="XBRL TAXONOMY EXTENSION LABEL LINKBASE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/blmi-20140930_lab.xml" />
+                    <edgar:xbrlFile edgar:sequence="9" edgar:file="blmi-20140930_pre.xml" edgar:type="EX-101.PRE" edgar:size="67806" edgar:description="XBRL TAXONOMY EXTENSION PRESENTATION LINKBASE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1593549/000101489714000441/blmi-20140930_pre.xml" />
+                </edgar:xbrlFiles>
+            </edgar:xbrlFiling>
+        </item>
+        <item>
+            <title>Primco Management Inc. (0001516522) (Filer)</title>
+            <link>http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/0001014897-14-000414-index.htm</link>
+            <guid>http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/0001014897-14-000414-xbrl.zip</guid>
+            <enclosure url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/0001014897-14-000414-xbrl.zip" length="80939" type="application/zip" />
+            <description>10-K/A</description>
+            <pubDate>Tue, 30 Sep 2014 17:41:38 EDT</pubDate>
+            <edgar:xbrlFiling xmlns:edgar="http://www.sec.gov/Archives/edgar">
+                <edgar:companyName>Primco Management Inc.</edgar:companyName>
+                <edgar:formType>10-K/A</edgar:formType>
+                <edgar:filingDate>10/01/2014</edgar:filingDate>
+                <edgar:cikNumber>0001516522</edgar:cikNumber>
+                <edgar:accessionNumber>0001014897-14-000414</edgar:accessionNumber>
+                <edgar:fileNumber>000-54930</edgar:fileNumber>
+                <edgar:acceptanceDatetime>20140930174138</edgar:acceptanceDatetime>
+                <edgar:period>20131231</edgar:period>
+                <edgar:assistantDirector>8</edgar:assistantDirector>
+                <edgar:assignedSic>6531</edgar:assignedSic>
+                <edgar:fiscalYearEnd>1231</edgar:fiscalYearEnd>
+                <edgar:xbrlFiles>
+                    <edgar:xbrlFile edgar:sequence="1" edgar:file="primco10k13am2v2.htm" edgar:type="10-K/A" edgar:size="482147" edgar:description="FORM 10-K/A" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/primco10k13am2v2.htm" />
+                    <edgar:xbrlFile edgar:sequence="2" edgar:file="primco10k13ex31.htm" edgar:type="EX-31" edgar:size="10412" edgar:description="EXHIBIT 31" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/primco10k13ex31.htm" />
+                    <edgar:xbrlFile edgar:sequence="3" edgar:file="primco10k13ex32.htm" edgar:type="EX-32" edgar:size="3121" edgar:description="EXHIBIT 32" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/primco10k13ex32.htm" />
+                    <edgar:xbrlFile edgar:sequence="4" edgar:file="pmcm-20131231.xml" edgar:type="EX-101.INS" edgar:size="891933" edgar:description="XBRL INSTANCE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/pmcm-20131231.xml" />
+                    <edgar:xbrlFile edgar:sequence="5" edgar:file="pmcm-20131231.xsd" edgar:type="EX-101.SCH" edgar:size="54127" edgar:description="XBRL TAXONOMY EXTENSION SCHEMA DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/pmcm-20131231.xsd" />
+                    <edgar:xbrlFile edgar:sequence="6" edgar:file="pmcm-20131231_cal.xml" edgar:type="EX-101.CAL" edgar:size="12529" edgar:description="XBRL TAXONOMY EXTENSION CALCULATION LINKBASE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/pmcm-20131231_cal.xml" />
+                    <edgar:xbrlFile edgar:sequence="7" edgar:file="pmcm-20131231_def.xml" edgar:type="EX-101.DEF" edgar:size="77249" edgar:description="XBRL TAXONOMY EXTENSION DEFINITION LINKBASE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/pmcm-20131231_def.xml" />
+                    <edgar:xbrlFile edgar:sequence="8" edgar:file="pmcm-20131231_lab.xml" edgar:type="EX-101.LAB" edgar:size="146832" edgar:description="XBRL TAXONOMY EXTENSION LABEL LINKBASE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/pmcm-20131231_lab.xml" />
+                    <edgar:xbrlFile edgar:sequence="9" edgar:file="pmcm-20131231_pre.xml" edgar:type="EX-101.PRE" edgar:size="131110" edgar:description="XBRL TAXONOMY EXTENSION PRESENTATION LINKBASE DOCUMENT" edgar:url="http://www.sec.gov/Archives/edgar/data/1516522/000101489714000414/pmcm-20131231_pre.xml" />
+                </edgar:xbrlFiles>
+            </edgar:xbrlFiling>
+        </item>
+    </channel>
+</rss>

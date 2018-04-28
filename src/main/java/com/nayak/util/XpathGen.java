@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Generates Xpath based on the input XML file/String provided by the user
@@ -34,6 +35,9 @@ public class XpathGen {
     }
 
     public List<XPathModel> xmlToXpath(String xmlString) {
+
+        final String soapEnvelopeNamespace=CommonUtils.soapEnvelopseNamespace(xmlString).toLowerCase();
+
         try {
             SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
             SAXParser saxParser = saxParserFactory.newSAXParser();
@@ -46,10 +50,16 @@ public class XpathGen {
             e.printStackTrace();
         }
 
-        return xPathModelList;
+//        return xPathModelList.stream().filter(xpath -> !xpath.getXpath().toLowerCase().contains(soapEnvelopeNamespace + ":header")).collect(Collectors.toList());
+        // Only look for SOAP Body part ... Other than that ignore e.g. Header etc..
+        return xPathModelList.stream().filter(xpath -> !xpath.getXpath().toLowerCase().contains(soapEnvelopeNamespace + ":header")).collect(Collectors.toList());
+
     }
 
     public List<XPathModel> xmlToXpath(File xmlFile) {
+
+        final String soapEnvelopeNamespace=CommonUtils.soapEnvelopseNamespace(xmlFile).toLowerCase();
+
         try {
             SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
             SAXParser saxParser = saxParserFactory.newSAXParser();
@@ -63,7 +73,9 @@ public class XpathGen {
             e.printStackTrace();
         }
 
-        return xPathModelList;
+        // Only look for SOAP Body part ... Other than that ignore e.g. Header etc..
+        return xPathModelList.stream().filter(xpath -> !xpath.getXpath().toLowerCase().contains(soapEnvelopeNamespace + ":header")).collect(Collectors.toList());
+
     }
 
 
