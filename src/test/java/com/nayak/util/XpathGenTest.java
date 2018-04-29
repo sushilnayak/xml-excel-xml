@@ -7,13 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -117,7 +112,7 @@ public class XpathGenTest {
     @Test
     public void cdataXmlXpathGenerationTest() {
 
-        CDATAXmlModel  cdataXmlModel = CommonUtils.cdataXpathInfo(xmlInsideCdata);
+        CDATAXmlModel  cdataXmlModel = CommonUtils.xmlWithNestedCdataXmlXpathInfo(xmlInsideCdata);
 
         List<XPathModel> xx = new XpathGen().xmlToXpath(cdataXmlModel.getCleanedUpXml().replace("></", ">?</"));
         assertThat(xx.size(), equalTo(6));

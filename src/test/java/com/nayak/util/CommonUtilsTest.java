@@ -1,15 +1,11 @@
 package com.nayak.util;
 
 import com.nayak.model.CDATAXmlModel;
-import com.nayak.model.ExcelCellModel;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.io.File;
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -63,8 +59,8 @@ public class CommonUtilsTest {
     @Test
     public void cdataXmlXpathGenerationTest() {
 
-        CDATAXmlModel cdataXmlModel = CommonUtils.cdataXpathInfo(xmlInsideCdata);
-        CDATAXmlModel noCdataXmlModel = CommonUtils.cdataXpathInfo(xmlString);
+        CDATAXmlModel cdataXmlModel = CommonUtils.xmlWithNestedCdataXmlXpathInfo(xmlInsideCdata);
+        CDATAXmlModel noCdataXmlModel = CommonUtils.xmlWithNestedCdataXmlXpathInfo(xmlString);
 
         assertThat(noCdataXmlModel.isHasCdata(), equalTo(false));
         assertThat(cdataXmlModel.isHasCdata(), equalTo(true));
@@ -73,7 +69,7 @@ public class CommonUtilsTest {
     @Test
     public void cdataPopulateRecreationTest() {
 
-        CDATAXmlModel cdataXmlModel = CommonUtils.cdataXpathInfo(xmlInsideCdata);
+        CDATAXmlModel cdataXmlModel = CommonUtils.xmlWithNestedCdataXmlXpathInfo(xmlInsideCdata);
 
         // Check if CDATA Is there or not!
         assertThat(cdataXmlModel.isHasCdata(), equalTo(true));

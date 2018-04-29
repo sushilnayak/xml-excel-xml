@@ -367,7 +367,7 @@ public class CommonUtils {
         return soapenvelop;
     }
 
-    public static CDATAXmlModel cdataXpathInfo(String xmlString) {
+    public static CDATAXmlModel xmlWithNestedCdataXmlXpathInfo(String xmlString) {
 
         boolean hasCdata = false;
         List<String> cdataValueHoldingElementXpath = new ArrayList<>();
