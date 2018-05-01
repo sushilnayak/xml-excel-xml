@@ -135,7 +135,9 @@ public class CommonUtils {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
 
-            transformer.setOutputProperty(OutputKeys.METHOD, "html");
+            // html formatting is problematic in case where XML has html realted tag.
+            // e.g <Input><nfdsnfksf>fsdknfskf<.....></Input> would cause closing Input to be removed
+//            transformer.setOutputProperty(OutputKeys.METHOD, "html");
 
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
@@ -153,7 +155,7 @@ public class CommonUtils {
             e.printStackTrace();
         }
 
-        return stringWriter.toString();
+        return stringWriter.toString().replaceAll("<(\\w+)( [^/>]*)?/>","<$1$2></$1>");
     }
 
     private static void trimWhitespace(Node node) {

@@ -1,15 +1,18 @@
 package com.nayak.util;
 
 import com.nayak.model.CDATAXmlModel;
+import com.nayak.model.XPathModel;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertThat;
 
 @RunWith(JUnit4.class)
@@ -17,9 +20,12 @@ public class CommonUtilsTest {
 
     String xmlInsideCdata;
     String xmlString;
+    String htmlTagsBasedXML;
 
     @Before
     public void setUp() {
+
+        htmlTagsBasedXML="<root><input><name>sushil</name><age-group>young</age-group><lname>nayak</lname></input></root>";
 
         xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
                 "<employee>\n" +
@@ -84,6 +90,17 @@ public class CommonUtilsTest {
 
         assertThat(new XpathGen().xmlToXpath(cdataXml).size(),equalTo(3));
 
+    }
+
+    @Test
+    public void xmlHavingHTMLTags(){
+        List<XPathModel> xPathModel=new XpathGen().xmlToXpath(CommonUtils.formatXML(htmlTagsBasedXML));
+
+        assertThat(3,equalTo(xPathModel.size()));
+
+        assertThat(xPathModel, hasItem(XPathModel.builder().xpath("//root[1]/input[1]/name[1]").value("sushil").build()));
+        assertThat(xPathModel, hasItem(XPathModel.builder().xpath("//root[1]/input[1]/age-group[1]").value("young").build()));
+        assertThat(xPathModel, hasItem(XPathModel.builder().xpath("//root[1]/input[1]/lname[1]").value("nayak").build()));
     }
 
 
