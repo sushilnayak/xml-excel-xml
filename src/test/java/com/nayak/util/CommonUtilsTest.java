@@ -25,7 +25,7 @@ public class CommonUtilsTest {
     @Before
     public void setUp() {
 
-        htmlTagsBasedXML="<root><input><name>sushil</name><age-group>young</age-group><lname>nayak</lname></input></root>";
+        htmlTagsBasedXML = "<root><input><name>sushil</name><age-group>young</age-group><lname>nayak</lname></input></root>";
 
         xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
                 "<employee>\n" +
@@ -59,6 +59,8 @@ public class CommonUtilsTest {
                 "      </sam:searchResponse>\n" +
                 "   </soapenv:Body>\n" +
                 "</soapenv:Envelope>";
+
+
     }
 
 
@@ -88,15 +90,15 @@ public class CommonUtilsTest {
 
         String cdataXml = CommonUtils.backWithUpdatedCdataXml(cdataXmlModel, xMap);
 
-        assertThat(new XpathGen().xmlToXpath(cdataXml).size(),equalTo(3));
+        assertThat(new XpathGen().xmlToXpath(cdataXml).size(), equalTo(3));
 
     }
 
     @Test
-    public void xmlHavingHTMLTags(){
-        List<XPathModel> xPathModel=new XpathGen().xmlToXpath(CommonUtils.formatXML(htmlTagsBasedXML));
+    public void xmlHavingHTMLTags() {
+        List<XPathModel> xPathModel = new XpathGen().xmlToXpath(CommonUtils.formatXML(htmlTagsBasedXML));
 
-        assertThat(3,equalTo(xPathModel.size()));
+        assertThat(3, equalTo(xPathModel.size()));
 
         assertThat(xPathModel, hasItem(XPathModel.builder().xpath("//root[1]/input[1]/name[1]").value("sushil").build()));
         assertThat(xPathModel, hasItem(XPathModel.builder().xpath("//root[1]/input[1]/age-group[1]").value("young").build()));

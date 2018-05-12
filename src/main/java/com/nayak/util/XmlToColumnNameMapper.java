@@ -8,6 +8,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 
@@ -79,11 +80,25 @@ public class XmlToColumnNameMapper {
                     .get();
         }
 
-        return  c.stream().map(x-> XpathColumnNameModel.builder()
+        Map<String,Long> toBeReformedColumnCountMap=c.stream().map(x->columnPrefix + x.getExcelColumn().replaceAll("\\[\\d+\\]$","").replace("[","_").replace("]","") )
+                .collect( Collectors.groupingBy(x->x,Collectors.counting()));
+
+        return  c.stream().map(x-> {
+
+            String excelColumNumberedArray=columnPrefix + x.getExcelColumn().replace("[","_").replace("]","");
+            String excelColumn=columnPrefix + x.getExcelColumn().replaceAll("\\[\\d+\\]$","").replace("[","_").replace("]","");
+
+            if (toBeReformedColumnCountMap.get(excelColumn) != 1){
+                excelColumn=excelColumNumberedArray;
+            }
+
+            return XpathColumnNameModel.builder()
                     .xpath(x.getXpath())
-                    .excelColumNumberedArray(columnPrefix + x.getExcelColumn().replace("[","_").replace("]",""))
-                    .excelColumn(columnPrefix + x.getExcelColumn().replaceAll("\\[\\d+\\]$","").replace("[","_").replace("]",""))
-                    .build() ).collect(Collectors.toList());
+                    .excelColumNumberedArray(excelColumNumberedArray)
+                    .excelColumn( excelColumn)
+                    .build();
+
+        }).collect(Collectors.toList());
 
     }
 
